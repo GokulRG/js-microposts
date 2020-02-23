@@ -1,3 +1,4 @@
+/*jshint esversion: 8 */
 const greeting = 'Hello World';
 console.log(greeting);
 
