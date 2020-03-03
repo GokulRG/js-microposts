@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --output-public-path=/build/  --mode development --progress --open --hot",
     "build": "webpack --mode production --progress",
-    "jsonServer":"json-server --watch database/db.json"
+    "jsonServer": "json-server --watch database/db.json"
   },
   "author": "Brad Traversy",
   "license": "MIT",

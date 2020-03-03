@@ -26,6 +26,37 @@ class UI {
 
         this.posts.innerHTML = output;
     }
+
+    showAlert(message, className) {
+        this.clearAlert();
+        // Create our alert div
+        const div = document.createElement('div');
+        div.className = className;
+        //Create a text node child and append it to the div
+        div.appendChild(document.createTextNode(message));
+        //Get parent to insert it into the DOM
+        const container = document.querySelector('.postsContainer');
+        // Get posts
+        const posts = document.querySelector('#posts');
+        // Insert alert div
+        container.insertBefore(div, posts);
+        // Time out
+        setTimeout(() => {
+            this.clearAlert();
+        }, 3000);
+    }
+
+    clearAlert() {
+        const currentAlert = document.querySelector('.alert');
+        if (currentAlert) {
+            currentAlert.remove();
+        }
+    }
+
+    clearFields() {
+        this.titleInput.value = "";
+        this.bodyInput.value = "";
+    }
 }
 
 export const ui = new UI();

@@ -1,19 +1,19 @@
 {
-    "posts": [
-        {
-            "id":1,
-            "title": "Sample Post",
-            "body": "This is a sample post"
-        },
-        {
-            "id": 2,
-            "title": "Sample Post 2",
-            "body": "This is sample post 2"
-        },
-        {
-            "id": 3,
-            "title": "Sample Post 3",
-            "body": "This is sample post 3"
-        }
-    ]
+  "posts": [
+    {
+      "id": 1,
+      "title": "Sample Post",
+      "body": "This is a sample post"
+    },
+    {
+      "id": 2,
+      "title": "Sample Post 2",
+      "body": "This is sample post 2"
+    },
+    {
+      "title": "Sample Post 3",
+      "body": "This is sample post 3",
+      "id": 3
+    }
+  ]
 }
