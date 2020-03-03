@@ -50,7 +50,12 @@ class EasyHTTP {
 
     //DELETE
     async delete(url) {
-        const response = await fetch(url);
+        const response = await fetch(url, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type':'application/json'
+            }
+        });
 
         const data = response.json();
 
