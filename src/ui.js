@@ -56,6 +56,52 @@ class UI {
     clearFields() {
         this.titleInput.value = "";
         this.bodyInput.value = "";
+        this.idInput.value = "";
+    }
+
+    clearIdInput() {
+        this.idInput.value = "";
+    }
+
+    fillForm(data) {
+        this.titleInput.value = data.title;
+        this.bodyInput.value = data.body;
+        this.idInput.value = data.id;
+
+        this.changeFormState('edit');
+    }
+    
+    changeFormState(type) {
+        if (type === 'edit') {
+            this.postSubmit.textContent = 'Update Post';
+            this.postSubmit.className = 'post-submit btn btn-warning btn-block';
+            // Add a cancel button
+            const button = document.createElement('button');
+            button.className = 'post-cancel btn btn-light btn-block';
+            button.appendChild(document.createTextNode('Cancel Edit'));
+            //Get Parent
+            const cardForm = document.querySelector('.card-form');
+            // Get const form end element
+            const formEnd = document.querySelector('.form-end');
+            // Insert the cancel button
+            cardForm.insertBefore(button, formEnd);
+            this.formState = 'edit';
+        } else if (type === 'add') {
+            this.postSubmit.textContent = 'Post It';
+            this.postSubmit.className = 'post-submit btn btn-primary btn-block';
+
+            // Remove Cancel button if present
+            if (document.querySelector('.post-cancel')) {
+                document.querySelector('.post-cancel').remove();
+            }
+            // Clear ID from Inner Field
+            this.clearIdInput();
+            this.clearFields();
+            this.clearAlert();
+            this.formState = 'add';
+        } else {
+            // do nothing
+        }
     }
 }
 
